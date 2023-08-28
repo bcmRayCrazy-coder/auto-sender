@@ -66,6 +66,17 @@ async function addAutoSendMenu(qContextMenu, message_element) {
     qContextMenu.appendChild(autosendmsg);
 }
 
+// 防抖
+let timer = {};
+function debounce(id, fn, time) {
+    return function (...args) {
+        timer[id] && clearTimeout(timer[id]);
+        timer[id] = setTimeout(() => {
+            fn.apply(this, args);
+        }, time);
+    };
+}
+
 // 页面加载完成时触发
 function onLoad() {
     LLAPI.add_qmenu(addAutoSendMenu);
@@ -92,16 +103,28 @@ async function onConfigView(view) {
     sendIntervalInput.value = settings.send_interval || 1;
     sendIntervalInput.addEventListener('change', () => {
         var value = parseFloat(sendIntervalInput.value);
-        settings.send_interval = value;
-        auto_sender.setSettings(JSON.stringify(settings));
+        debounce(
+            'interval',
+            (value) => {
+                settings.send_interval = value;
+                auto_sender.setSettings(JSON.stringify(settings));
+            },
+            500
+        )(value);
     });
 
     const sendNumberInput = view.querySelector('#send_number');
     sendNumberInput.value = settings.send_number || 5;
     sendNumberInput.addEventListener('change', () => {
         var value = parseInt(sendNumberInput.value);
-        settings.send_number = value;
-        auto_sender.setSettings(JSON.stringify(settings));
+        debounce(
+            'number',
+            (value) => {
+                settings.send_number = value;
+                auto_sender.setSettings(JSON.stringify(settings));
+            },
+            500
+        )(value);
     });
 }
 
