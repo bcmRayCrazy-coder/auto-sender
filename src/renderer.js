@@ -1,5 +1,6 @@
 // 运行在 Electron 渲染进程 下的页面脚本
 
+// 右键菜单
 const autosend_element = document.createElement('div');
 autosend_element.innerHTML = `
 <a 
@@ -10,7 +11,7 @@ autosend_element.innerHTML = `
  tabindex="-1">
   <div class="q-context-menu-item__icon q-context-menu-item__head">
     <i class="q-icon" data-v-717ec976="" style="--b4589f60: inherit; --6ef2e80d: 16px;">
-    <svg xmlns='http://www.w3.org/2000/svg'  viewBox='0 0 24 24' fill='#000000' width='24' height='24'><path d="M21.063 15H13v2h9v-2zM4 7h11v2H4zm0 4h11v2H4zm0 4h7v2H4z"></path></svg>
+    <svg xmlns='http://www.w3.org/2000/svg'  viewBox='0 0 24 24' fill='#000000' height='1em'><path d="M21.063 15H13v2h9v-2zM4 7h11v2H4zm0 4h11v2H4zm0 4h7v2H4z"></path></svg>
     </i>
   </div>
   <!---->
