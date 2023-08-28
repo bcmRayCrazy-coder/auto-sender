@@ -126,6 +126,22 @@ async function onConfigView(view) {
             500
         )(value);
     });
+
+    document.querySelectorAll('.nav-item.liteloader').forEach((node) => {
+        if (node.textContent === '自动刷屏') {
+            const icon_node = node.querySelector('.q-icon.icon');
+            if (icon_node.firstElementChild) {
+                return;
+            }
+            const isDark = document.body.getAttribute('q-theme') == 'dark';
+            icon_node.insertAdjacentHTML(
+                'afterbegin',
+                `<svg xmlns='http://www.w3.org/2000/svg'  viewBox='0 0 24 24' fill='${
+                    isDark ? '#ffffff' : '#000000'
+                }' height='1em'><path d="M21.063 15H13v2h9v-2zM4 7h11v2H4zm0 4h11v2H4zm0 4h7v2H4z"></path></svg>`
+            );
+        }
+    });
 }
 
 // 这两个函数都是可选的
