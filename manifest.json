@@ -4,7 +4,7 @@
     "name": "自动刷屏",
     "slug": "auto_sender",
     "description": "全自动刷屏辅助",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "thumbnail": "./icon.png",
     "author": {
         "name": "bcmray_crazy",
