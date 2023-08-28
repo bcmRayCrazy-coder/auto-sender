@@ -10,14 +10,6 @@
         "name": "bcmray_crazy",
         "link": "https://github.com/bcmRayCrazy-coder"
     },
-    "repository": {
-        "repo": "LiteLoaderQQNT/LiteLoaderQQNT-Plugin-Template",
-        "branch": "main",
-        "use_release": {
-            "tag": "latest",
-            "name": "Plugin-Template.zip"
-        }
-    },
     "platform": [
         "win32",
         "linux",
