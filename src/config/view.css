@@ -1,0 +1,28 @@
+.as .vertical-list-item {
+    cursor: pointer;
+    margin: 12px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: width 2s;
+}
+
+.as .column-list-item {
+    margin: 12px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: column;
+}
+
+.as .column-list-item input {
+    padding: 5px;
+    padding-left: 10px;
+}
+
+.as .input {
+    border-radius: 8px;
+    border: 1px solid #ffffff54;
+    background-color: var(--fg_white);
+    color: #ffffff;
+}

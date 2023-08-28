@@ -1,14 +1,14 @@
 {
     "manifest_version": 3,
     "type": "extension",
-    "name": "插件模板",
-    "slug": "plugin_template",
-    "description": "LiteLoaderQQNT的插件模板",
+    "name": "自动刷屏",
+    "slug": "auto_sender",
+    "description": "全自动刷屏辅助",
     "version": "0.1.0",
     "thumbnail": "./icon.png",
     "author": {
-        "name": "LiteLoaderQQNT",
-        "link": "https://github.com/LiteLoaderQQNT"
+        "name": "bcmray_crazy",
+        "link": "https://github.com/bcmRayCrazy-coder"
     },
     "repository": {
         "repo": "LiteLoaderQQNT/LiteLoaderQQNT-Plugin-Template",
