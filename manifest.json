@@ -4,11 +4,19 @@
     "name": "自动刷屏",
     "slug": "auto_sender",
     "description": "全自动刷屏辅助",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "thumbnail": "./icon.png",
     "author": {
         "name": "bcmray_crazy",
         "link": "https://github.com/bcmRayCrazy-coder"
+    },
+    "repository": {
+        "repo": "https://github.com/bcmRayCrazy-coder/auto-sender",
+        "branch": "main",
+        "use_release": {
+            "tag": "latest",
+            "name": "auto-sender-0.1.7.zip"
+        }
     },
     "platform": [
         "win32",
