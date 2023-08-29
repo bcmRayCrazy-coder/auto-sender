@@ -72,7 +72,7 @@ function onLoad(plugin) {
         try {
             setSettings(settingsPath, content);
         } catch (error) {
-            output(error);
+            console.error(error);
         }
     });
 }
