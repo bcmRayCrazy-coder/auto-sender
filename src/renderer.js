@@ -67,11 +67,11 @@ async function addAutoSendMenu(qContextMenu, message_element) {
 }
 
 // 防抖
-let timer = {};
-function debounce(id, fn, time) {
+function debounce(fn, time) {
+    let timer;
     return function (...args) {
-        timer[id] && clearTimeout(timer[id]);
-        timer[id] = setTimeout(() => {
+        timer && clearTimeout(timer);
+        timer = setTimeout(() => {
             fn.apply(this, args);
         }, time);
     };
@@ -97,34 +97,26 @@ async function onConfigView(view) {
     document.head.appendChild(link);
     // 设置
     var settings = await auto_sender.getSettings();
+    const updateSettings = debounce(
+        () => auto_sender.setSettings(JSON.stringify(settings)),
+        500
+    );
 
     // 监听
     const sendIntervalInput = view.querySelector('#send_interval');
     sendIntervalInput.value = settings.send_interval || 1;
     sendIntervalInput.addEventListener('change', () => {
         var value = parseFloat(sendIntervalInput.value);
-        debounce(
-            'interval',
-            (value) => {
-                settings.send_interval = value;
-                auto_sender.setSettings(JSON.stringify(settings));
-            },
-            500
-        )(value);
+        settings.send_interval = value;
+        updateSettings();
     });
 
     const sendNumberInput = view.querySelector('#send_number');
     sendNumberInput.value = settings.send_number || 5;
     sendNumberInput.addEventListener('change', () => {
         var value = parseInt(sendNumberInput.value);
-        debounce(
-            'number',
-            (value) => {
-                settings.send_number = value;
-                auto_sender.setSettings(JSON.stringify(settings));
-            },
-            500
-        )(value);
+        settings.send_number = value;
+        updateSettings();
     });
 
     document.querySelectorAll('.nav-item.liteloader').forEach((node) => {
