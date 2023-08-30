@@ -12,11 +12,7 @@
     },
     "repository": {
         "repo": "https://github.com/bcmRayCrazy-coder/auto-sender",
-        "branch": "main",
-        "use_release": {
-            "tag": "latest",
-            "name": "auto-sender-0.1.7.zip"
-        }
+        "branch": "main"
     },
     "platform": [
         "win32",
